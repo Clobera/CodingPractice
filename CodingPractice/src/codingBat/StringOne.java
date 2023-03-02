@@ -17,6 +17,18 @@ public class StringOne {
         System.out.println();
         System.out.println();
         System.out.println("*******************" + " Problem 2 " + "*******************");
+        String result3 = str.nTwice("hellooooooImcarlos", 2);
+        System.out.println(result3);
+
+
+        System.out.println();
+        System.out.println();
+        System.out.println("*******************" + " BIG O stuff " + "*******************");
+
+        int[] arr = new int[]{0,1,2,3,4,5,6,7};
+
+
+        str.printUnorderedPairs(arr);
 
     }
 
@@ -39,10 +51,17 @@ public class StringOne {
 //    nTwice("Chocolate", 3) → "Choate"
 //    nTwice("Chocolate", 1) → "Ce"
     public String nTwice(String str, int n) {
+        return str.substring(0,n) + str.substring(str.length() - n, str.length());
+
+    }
 
 
 
-        return null;
+    public void printUnorderedPairs(int[] array){
+        for (int i = 0; i < array.length; i++)
+            for (int j = i + 1; j < array.length; j++){
+                System.out.println(array[i] + " , " + array[j]);
+            }
     }
 
 
