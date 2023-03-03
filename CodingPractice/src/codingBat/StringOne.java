@@ -20,6 +20,12 @@ public class StringOne {
         String result3 = str.nTwice("hellooooooImcarlos", 2);
         System.out.println(result3);
 
+        System.out.println();
+        System.out.println();
+        System.out.println("*******************" + " Problem 3 " + "*******************");
+        String random = "hello";
+        System.out.println(random.substring(1,5));
+
 
         System.out.println();
         System.out.println();
@@ -53,6 +59,31 @@ public class StringOne {
     public String nTwice(String str, int n) {
         return str.substring(0,n) + str.substring(str.length() - n, str.length());
 
+    }
+
+
+//    Given a string and an index, return a string length 2 starting at the given index. If the index is too big or too small to define a string length 2, use the first 2 chars. The string length will be at least 2.
+//    twoChar("java", 0) → "ja"
+//    twoChar("java", 2) → "va"
+//    twoChar("java", 3) → "ja"
+    public String twoChar(String str, int index) {
+        if(index >= str.length()-1 || index < 0){
+            return str.substring(0, 2);
+        }
+        return str.substring(index, index + 2);
+    }
+
+//    Given a string, return true if "bad" appears starting at index 0 or 1 in the string, such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0. Note: use .equals() to compare 2 strings.
+//    hasBad("badxx") → true
+//    hasBad("xbadxx") → true
+//    hasBad("xxbadxx") → false
+
+
+    public boolean hasBad(String str) {
+        if(str.length() >= 3 && str.substring(0,3).equals("bad") || str.length() >= 4 && str.substring(1,4).equals("bad") ){
+            return true;
+        }
+        return false;
     }
 
 
