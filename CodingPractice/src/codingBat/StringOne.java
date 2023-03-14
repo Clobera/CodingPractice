@@ -1,5 +1,8 @@
 package codingBat;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringOne {
     public static void main(String args[]) {
         StringOne str = new StringOne();
@@ -35,6 +38,16 @@ public class StringOne {
 
 
         str.printUnorderedPairs(arr);
+
+        System.out.println();
+        System.out.println();
+        System.out.println("*******************" + " fizzbuzz " + "*******************");
+
+        List<String> fizzbuzz = str.fizzbuzz(44);
+        for (String item: fizzbuzz
+             ) {
+            System.out.println(item);
+        }
 
     }
 
@@ -94,6 +107,48 @@ public class StringOne {
                 System.out.println(array[i] + " , " + array[j]);
             }
     }
+
+    public List<String> fizzbuzz(int num){
+        List<String> output = new ArrayList<>();
+        for(int i = 0; i< num; i++){
+
+
+        if (i % 3 == 0 && i % 5 == 0){
+            output.add("fizzbuzz");
+        }
+        else if(i % 3 == 0){
+            output.add("fizz");
+        }
+        else if(i % 5 == 0){
+            output.add("buzz");
+        }
+        else{
+            output.add(i +"");
+        }
+
+    }
+        return output;
+    }
+
+
+//    Given a string of any length, return a new string where the last 2 chars, if present, are swapped, so "coding" yields "codign".
+//    lastTwo("coding") → "codign"
+//    lastTwo("cat") → "cta"
+//    lastTwo("ab") → "ba"
+
+    public String lastTwo(String str) {
+        if(str.length() <= 1){
+            return str;
+        }else if(str.length() == 2){
+            return str.substring(1) + str.substring(0,1);
+        }
+        return str.substring(0, str.length()-2) + str.substring(str.length()-1) + str.substring(str.length() - 2,str.length()-1);
+
+    }
+
+
+
+
 
 
 }
